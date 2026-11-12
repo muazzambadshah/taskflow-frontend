@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.num {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+}
+.barAccent  { background: var(--accent); }
+.barWarning { background: var(--warning); }
+.barGreen   { background: var(--accent3); }
+.barDanger  { background: var(--accent2); }
+
+.progressWrap { margin-bottom: 28px; }
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.progressTrack {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+  border-radius: 3px;
+  transition: width .5s ease;
+}

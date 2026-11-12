@@ -1,0 +1,97 @@
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, #7c6aff18 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, #ff6a9a12 0%, transparent 50%);
+}
+
+.box {
+  width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn .3s ease;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.logo span { color: var(--accent); }
+
+.sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.field { margin-bottom: 18px; }
+.field label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.field input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s;
+}
+.field input:focus { border-color: var(--accent); }
+
+.err {
+  color: var(--danger);
+  font-size: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  margin-bottom: 20px;
+}
+.btn:hover:not(:disabled) { background: #6655ee; transform: translateY(-1px); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.switch {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.switch a { color: var(--accent); text-decoration: none; }
+.switch a:hover { text-decoration: underline; }

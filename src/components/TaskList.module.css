@@ -1,0 +1,92 @@
+.list { display: flex; flex-direction: column; gap: 10px; }
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+.emptyIcon { font-size: 48px; margin-bottom: 12px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: border-color .2s, transform .15s;
+  animation: slideIn .25s ease;
+}
+.card:hover { border-color: var(--accent); transform: translateX(3px); }
+.card.done  { opacity: .55; }
+
+.check {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .2s;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  color: #000;
+}
+.check:hover  { border-color: var(--accent3); }
+.check.checked { background: var(--accent3); border-color: var(--accent3); }
+
+.body { flex: 1; min-width: 0; }
+
+.taskTitle { font-size: 14px; font-weight: 500; }
+.done .taskTitle { text-decoration: line-through; color: var(--muted); }
+
+.meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 600;
+}
+.high   { background: #ff4d6d22; color: #ff4d6d; border: 1px solid #ff4d6d44; }
+.medium { background: #ffbe0b22; color: #ffbe0b; border: 1px solid #ffbe0b44; }
+.low    { background: #6affb822; color: #6affb8; border: 1px solid #6affb844; }
+.cat    { background: #7c6aff22; color: #a89fff; border: 1px solid #7c6aff44; }
+
+.date { font-size: 10px; color: var(--muted); }
+
+.actions { display: flex; gap: 8px; }
+
+.editBtn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.editBtn:hover { border-color: var(--accent); color: var(--accent); }
+
+.deleteBtn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--danger);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .2s;
+  border-color: #ff4d6d44;
+}
+.deleteBtn:hover { background: var(--danger); color: #fff; }
